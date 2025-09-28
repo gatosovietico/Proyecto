@@ -22,12 +22,12 @@ h1 {
     margin: 10px 0;
 }
 h2 {
-    text-align: center;
-    color: black;
-    margin: 50px 0;
+text-align: center;
+color: black;
+margin: 50px 0;
 }
 
-/* Botón Productos */
+/* Botón Productos centrado */
 .center-button {
     display: flex;
     justify-content: center;
@@ -63,7 +63,7 @@ nav a {
     text-decoration: none;
 }
 
-/* Secciones ocultas */
+/* Secciones ocultas por defecto */
 .section {
     display: none;
     margin: 20px;
@@ -72,19 +72,15 @@ nav a {
     border-radius: 10px;
 }
 
-/* Mostrar menú y secciones cuando #productos está activo */
+/* Mostrar menú cuando se entra a #productos */
 #productos:target nav {
     display: flex;
 }
+/* Mostrar secciones cuando se hace clic */
 #consulta:target,
 #alta:target,
 #baja:target {
     display: block;
-}
-
-/* Ocultar botón Productos cuando #productos está activo */
-#productos:target ~ .center-button {
-    display: none;
 }
 
 /* Tablas */
@@ -105,46 +101,189 @@ table th {
 img.tabla-img {
     width: 60px;
 }
+button.small {
+    background: rgb(146,1,1);
+    color: white;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 </style>
 </head>
 <body>
 
 <h1>LA CANASTA PARA EL HOGAR</h1>
+
 <h2>BIENVENIDOS</h2>
 
-<!-- Botón Productos (primero visible) -->
+<!-- Botón Productos -->
 <div class="center-button">
     <a href="#productos">Productos</a>
 </div>
 
 <!-- Contenedor menú + secciones -->
 <div id="productos">
-    <!-- Menú arriba (inicialmente oculto) -->
+    <!-- Menú arriba -->
     <nav>
         <a href="#consulta">Consulta</a>
         <a href="#alta">Alta</a>
         <a href="#baja">Baja</a>
     </nav>
 
-    <!-- Secciones -->
+    <!-- Consulta -->
     <div id="consulta" class="section">
         <h2>Consulta de Productos</h2>
-        <p>Contenido consulta...</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="tabla-img" src="https://http2.mlstatic.com/D_NQ_NP_2X_686131-MLU70065185563_062023-F.webp" alt="Maruchan"></td>
+                    <td>01</td>
+                    <td>Sopa instantanea</td>
+                    <td>Maruchan</td>
+                    <td>Vaso</td>
+                    <td>01</td>
+                    <td>$18</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td><img class="tabla-img" src="https://imgs.search.brave.com/_UeoqklnGzApqAb20LlXNgsYS0kQYrQAFwnqfBgJ8ZY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9odHRw/Mi5tbHN0YXRpYy5j/b20vRF9RX05QXzJY_Xzc5OTE3MC1NTE03MDY1MzI2NzI1M18wNzIwMjMtRS1zZXQtZGUtcGVyZnVtZXMt..." alt="Hello Kitty"></td>
+                    <td>Perfume Hello Kitty</td>
+                    <td>$80</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td><img class="tabla-img" src="https://imgs.search.brave.com/M07LvhjESTzBsV0QgSDylAj8U-omGr2SJ1oYP_1KZEo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2EyL2I3/LzhiL2EyYjc4Yjhm/MzkyNTIwYjEwOWUy/OTVmYmY1YjI1Y2I2/LmpwZw" alt="Sabritas"></td>
+                    <td>Sabritas</td>
+                    <td>$15</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td><img class="tabla-img" src="https://www.tiendas3b.com/wp-content/uploads/2025/05/NUESTRO-CAMPO_Ensalada-de-verduras-430g_02.jpg" alt="Verduras"></td>
+                    <td>Verduras</td>
+                    <td>$25</td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td><img class="tabla-img" src="https://imgs.search.brave.com/RxL-l_fLagR6ALhwWk1UH-7E6cWs_EtGj8bLhQrZrek/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/Y29jaW5hdml0YWwu/bXgvd3AtY29udGVu/dC91cGxvYWRzLzIw/MjQvMDkvcmVmcmVz/Y29zLW1lbm9zLWF6/dWNhci02MzR4NDIw/LmpwZw" alt="Refrescos"></td>
+                    <td>Refrescos</td>
+                    <td>$10</td>
+                    <td>6</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 
+    <!-- Alta -->
     <div id="alta" class="section">
         <h2>Alta de Productos</h2>
-        <p>Contenido alta...</p>
+        <table>
+            <thead>
+                <tr>	
+		    
+                    <th>Id_prod</th>
+                    <th>Producto</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Departamento</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                   <td>01</td>
+                    <td>Sopa instantanea</td>
+                    <td>Maruchan</td>
+                    <td>Vaso</td>
+                    <td>Sopas</td>
+                    <td>$18</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Perfume Hello Kitty</td>
+                    <td>Fuller</td>
+                    <td>Color rosita</td>
+                    <td>Perfumes</td>
+                    <td>$80</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>Sabritas</td>
+                    <td>Cheetos</td>
+                    <td>Moradito</td>
+                    <td>Chucherias</td>
+                    <td>$15</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>Verduras</td>
+                    <td>No tiene</td>
+                    <td>No tiene</td>
+                    <td>Verduras</td>
+
+                    <td>$25</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>Refrescos</td>
+                    <td>Peñafiel</td>
+                    <td>Peñafiel</td>
+                    <td>Sodas</td>
+                    <td>$10</td>
+                    <td>100</td>
+                </tr>
+            </tbody>
+        </table>
+        <button>Agregar Seleccionados</button>
     </div>
 
+    <!-- Baja -->
     <div id="baja" class="section">
         <h2>Baja de Productos</h2>
-        <p>Contenido baja...</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Imagen</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><img class="tabla-img" src="https://http2.mlstatic.com/D_NQ_NP_2X_686131-MLU70065185563_062023-F.webp"></td>
+                    <td>Maruchan</td>
+                    <td>$18</td>
+                    <td>5</td>
+                    <td><button class="small">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td><img class="tabla-img" src="https://imgs.search.brave.com/M07LvhjESTzBsV0QgSDylAj8U-omGr2SJ1oYP_1KZEo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2EyL2I3/LzhiL2EyYjc4Yjhm/MzkyNTIwYjEwOWUy/OTVmYmY1YjI1Y2I2/LmpwZw"></td>
+                    <td>Sabritas</td>
+                    <td>$15</td>
+                    <td>3</td>
+                    <td><button class="small">Eliminar</button></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
 
-<img class="logo" src="https://img.freepik.com/vector-premium/productos-lacteos-canasta-mimbre-queso-requeson-mantequilla-comida-diaria-productos-agricolas-frescos-tradicionales_169241-2935.jpg" alt="Logo">
+<img class="logo" src="https://img.freepik.com/vector-premium/productos-lacteos-canasta-mimbre-queso-requeson-mantequilla-comida-diaria-productos-agricolas-frescos-tradicionales_169241-2935.jpg" alt="Logo Tiendas 3B">
 
 </body>
 </html>
-
